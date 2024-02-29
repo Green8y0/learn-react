@@ -1,28 +1,25 @@
-import { useState } from 'react';
+import { useNavigate, useRoutes } from 'react-router';
+import { NavLink } from 'react-router-dom'
 import './App.css';
-import ClassCom from './basic/ClassCom';
-import FuncCom from './basic/FuncCom';
-import Other from './basic/Other';
+import routes from './routers/index';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  const addCount = (value: number) => {
-    setCount(count + value)
-  }
-  const minusCount = (value: number) => {
-    setCount(count - value)
-  }
-
+  const routers = useRoutes(routes)
+  const navigate = useNavigate()
+  
   return (
     <div id='app'>
-      <ClassCom name='类组件' addCount={addCount} />
-      <FuncCom
-        name='函数组件'
-        count={count}
-        minusCount={minusCount}
-      />
-      <Other/>
+      <nav className='nav'>
+        <div>
+          <NavLink to={'/basic'}>react基本用法示例</NavLink>
+        </div>
+        <button
+          onClick={() => {
+            navigate('/higher')
+          }}
+        >react高级用法示例</button>
+      </nav>
+      {routers}
     </div>
   );
 }
