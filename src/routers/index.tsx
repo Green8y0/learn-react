@@ -15,7 +15,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/higher',
-    element: <Higher/>
+    element: <Higher title='react高级用法'/>
   },
   {
     path: '*',
