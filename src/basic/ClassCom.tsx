@@ -12,29 +12,29 @@ interface IState {
 }
 type ClickType = 'plus' | 'minus'
 
-export default class ClassCom extends Component<IProps> {
+export default class ClassCom extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props)
 
     this.state = {
       number: 0,
       msg: 'hello luyi'
-    } as IState
+    }
   }
   
   handleClick = (type: ClickType) => {
     this.setState({
-      number: (this.state as IState).number + (type === 'plus' ? 1 : -1)
+      number: (this.state).number + (type === 'plus' ? 1 : -1)
     }, () => {
       // 此处可以拿到最新的state值
-      console.log("setState cb state number 的值", (this.state as IState).number)
+      console.log("setState cb state number 的值", this.state.number)
     })
     // this.setState是异步的，此处无法拿到最新的setState后的值
-    console.log("fn state number 的值", (this.state as IState).number)
+    console.log("fn state number 的值", this.state.number)
   }
   handleClickFn =  (type: ClickType) => {
     this.setState({
-      number: (this.state as IState).number + (type === 'plus' ? 1 : -1)
+      number: (this.state).number + (type === 'plus' ? 1 : -1)
     })
   }
 
@@ -45,7 +45,7 @@ export default class ClassCom extends Component<IProps> {
   }
 
   render() {
-    const { number, msg } = this.state as IState
+    const { number, msg } = this.state
     const { name, addCount } = this.props
     
     return (
