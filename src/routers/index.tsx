@@ -1,7 +1,8 @@
 // routers/index.tsx 第二种写法
 import { RouteObject, Navigate } from 'react-router'
-import Basic from '../basic'
-import Higher from '../higher'
+import Basic from '../pages/basic'
+import Higher from '../pages/higher'
+import Closure from '../pages/closure'
 
 const routes: RouteObject[] = [
   // 访问/重定向至/home
@@ -16,6 +17,10 @@ const routes: RouteObject[] = [
   {
     path: '/higher',
     element: <Higher title='react高级用法'/>
+  },
+  {
+    path: '/closure',
+    element: <Closure title='闭包陷阱'/>
   },
   {
     path: '*',

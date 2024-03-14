@@ -18,6 +18,11 @@ function App() {
             navigate('/higher')
           }}
         >react高级用法示例</button>
+        <button
+          onClick={() => {
+            navigate('/closure')
+          }}
+        >闭包陷阱</button>
       </nav>
       {routers}
     </div>

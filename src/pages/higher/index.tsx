@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react'
-import Card, { withCard } from '../hoc/Card';
-import Extending from '../hoc/Extending';
-import ClassRenderControl from '../renderControl/ClassRenderControl';
-import ClosureTrap from '../renderControl/ClosureTrap';
-import FuncRenderControl from '../renderControl/FuncRenderControl';
-import ClassRef from '../useApi/ClassRef';
-import ClassContext from '../useApi/context/ClassContext';
-import FuncContext from '../useApi/context/FuncContext';
-import RouterContext from '../useApi/context/RouterContext';
-import FuncRef from '../useApi/FuncRef';
-import Reducer from '../useApi/Reducer';
-import VisibleApi from '../useApi/VisibleApi'
+import Card, { withCard } from '../../hoc/Card';
+import Extending from '../../hoc/Extending';
+import ClassRenderControl from '../../renderControl/ClassRenderControl';
+import ClosureTrap from '../../renderControl/ClosureTrap';
+import FuncRenderControl from '../../renderControl/FuncRenderControl';
+import ClassRef from '../../useApi/ClassRef';
+import ClassContext from '../../useApi/context/ClassContext';
+import FuncContext from '../../useApi/context/FuncContext';
+import RouterContext from '../../useApi/context/RouterContext';
+import FuncRef from '../../useApi/FuncRef';
+import Reducer from '../../useApi/Reducer';
+import VisibleApi from '../../useApi/VisibleApi'
 
 interface IProps {
   title?: string
