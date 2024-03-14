@@ -1,8 +1,10 @@
 // routers/index.tsx 第二种写法
+import React from 'react'
 import { RouteObject, Navigate } from 'react-router'
 import Basic from '../pages/basic'
-import Higher from '../pages/higher'
-import Closure from '../pages/closure'
+const Higher = React.lazy(() => import('../pages/higher'))
+const Closure = React.lazy(() => import('../pages/closure'))
+const Example = React.lazy(() => import('../pages/example'))
 
 const routes: RouteObject[] = [
   // 访问/重定向至/home
@@ -21,6 +23,10 @@ const routes: RouteObject[] = [
   {
     path: '/closure',
     element: <Closure title='闭包陷阱'/>
+  },
+  {
+    path: '/example',
+    element: <Example title='React示例'/>
   },
   {
     path: '*',

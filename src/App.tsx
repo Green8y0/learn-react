@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { useNavigate, useRoutes } from 'react-router';
 import { NavLink } from 'react-router-dom'
 import './App.css';
@@ -24,7 +25,9 @@ function App() {
           }}
         >闭包陷阱</button>
       </nav>
-      {routers}
+      <Suspense fallback={<div>loading...</div>}>
+        {routers}
+      </Suspense>
     </div>
   );
 }
