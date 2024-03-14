@@ -24,6 +24,9 @@ function App() {
             navigate('/closure')
           }}
         >闭包陷阱</button>
+        <div>
+          <NavLink to={'/example'}>react示例</NavLink>
+        </div>
       </nav>
       <Suspense fallback={<div>loading...</div>}>
         {routers}
